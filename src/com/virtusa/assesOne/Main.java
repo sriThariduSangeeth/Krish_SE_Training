@@ -24,7 +24,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println(ColorBank.RED + "\t \t \t \tW E L C O M E " + ColorBank.RESET);
         System.out.println();
-        System.out.println(ColorBank.PURPLE + "\t \t A S S I G N M E N T \t O N E " + ColorBank.RESET);
+        System.out.println(ColorBank.PURPLE + "\t \t A S S I G N M E N T \t O N E & T W O" + ColorBank.RESET);
         System.out.println();
         Main m = new Main();
         m.display();
@@ -42,10 +42,11 @@ public class Main {
         System.out.println("2. Read All Saved Text Files");
         System.out.println("3. Convert to Uppercase");
         System.out.println("4. Covert to Lowercase");
+        System.out.println("5. Show after revers digit");
         System.out.println("0. Exit Program");
         System.out.println();
         try {
-            System.out.print("Enter option : ");
+            System.out.print(ColorBank.CYAN+"Enter option : "+ColorBank.RESET);
             option = sc.nextInt();
             switch (option){
                 case 1:

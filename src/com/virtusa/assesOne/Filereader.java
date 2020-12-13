@@ -31,9 +31,9 @@ public class Filereader {
 
 
         for (File file : listOfFiles) {
-            // Access file.getName() or do anything else here
+
             String line;
-            if(file.getName().equalsIgnoreCase(TXTFILEONE) || file.getName().equalsIgnoreCase(TXTFILETWO)){
+            if(file.getName().contains(".txt")){
                 br = new BufferedReader(new FileReader(file.getName()));
 
                 if(!isEmptyFile(file.getName())){
@@ -70,7 +70,7 @@ public class Filereader {
     public void toConChar(String v){
 
         System.out.println("- - - - - - - - - - - - -");
-        System.out.println("CONVERT INTO "+v+" CASE");
+        System.out.println("CONVERT INTO "+ v +" CASE");
         System.out.println("- - - - - - - - - - - - -");
         System.out.println();
         for (File file : listOfFiles) {
@@ -86,9 +86,7 @@ public class Filereader {
                         }else {
                             System.out.print(Character.toLowerCase(ch1));
                         }
-
                     }
-
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 } catch (IOException e) {
