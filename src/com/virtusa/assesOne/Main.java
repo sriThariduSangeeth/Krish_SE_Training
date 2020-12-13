@@ -1,6 +1,7 @@
 package com.virtusa.assesOne;
 
 import com.sun.media.jfxmediaimpl.HostUtils;
+import com.virtusa.assesTwo.ReversObjInt;
 import com.virtusa.util.ColorBank;
 
 import java.io.File;
@@ -20,6 +21,7 @@ public class Main {
 
     public Scanner sc;
     Filereader fr = new Filereader("../"+DIRECTORY);
+    ReversObjInt roi = new ReversObjInt("../"+DIRECTORY);
 
     public static void main(String[] args) {
         System.out.println(ColorBank.RED + "\t \t \t \tW E L C O M E " + ColorBank.RESET);
@@ -141,7 +143,7 @@ public class Main {
     }
 
     public void reversInt(){
-
+        roi.reverseNumberFirstMeth();
     }
 
 }

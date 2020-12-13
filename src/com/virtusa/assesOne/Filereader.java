@@ -16,10 +16,10 @@ import static com.virtusa.util.Constants.TXTFILETWO;
  */
 public class Filereader {
 
-    public File directory;
-    public File[] listOfFiles;
-    public BufferedReader br = null;
-    public FileReader fr = null;
+    private File directory;
+    private File[] listOfFiles;
+    private BufferedReader br = null;
+    private FileReader fr = null;
 
     public Filereader(String path){
         directory = new File(path);
