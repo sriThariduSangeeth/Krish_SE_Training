@@ -3,9 +3,12 @@ package com.virtusa.assesOne;
 import com.sun.media.jfxmediaimpl.HostUtils;
 import com.virtusa.util.ColorBank;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import static com.virtusa.util.Constants.*;
 
 /**
  * @author dtsangeeth
@@ -85,11 +88,11 @@ public class Main {
 
         try {
             if (validateString(textIn)){
-                fw = new Filewriter("StringText.txt");
+                fw = new Filewriter(TXTFILEONE);
                 fw.writeStringToTxtFile(textIn);
 
             }else {
-                fw = new Filewriter("IntegerText.txt");
+                fw = new Filewriter(TXTFILETWO);
                 fw.writeStringToTxtFile(textIn);
             }
         } catch (IOException e) {
@@ -111,6 +114,13 @@ public class Main {
     }
 
     public void readTextFile (){
+
+        File directory = new File("../"+DIRECTORY);
+        File[] listOfFiles = directory.listFiles();
+        for (File file : listOfFiles) {
+            // Access file.getName() or do anything else here
+            System.out.println(file.getName());
+        }
 
     }
 
