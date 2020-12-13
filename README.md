@@ -2,10 +2,6 @@
 <h2 align="center">LPTraining </h2>
 LP Training code base that belongs to my office work.
 
-<!-- image -->
-<img src="./assest/img.png"
-alt="App Screenshots" height="400" width="880">
-
 <!-- Badges -->
 <p align="center">
   <a href="LICENSE.md">
@@ -15,3 +11,7 @@ alt="App Screenshots" height="400" width="880">
 
 
 <h4 align="center">Here is a screenshot of the UI</h4>
+
+<!-- image -->
+<img src="./assest/img.png"
+alt="App Screenshots" height="400" width="880">
