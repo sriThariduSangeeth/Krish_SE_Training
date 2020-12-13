@@ -61,6 +61,9 @@ public class Main {
                 case 4:
                     conToLowerCase();
                     break;
+                case 5:
+                    reversInt();
+                    break;
                 case 0:
                     System.exit(0);
                     break;
@@ -135,6 +138,10 @@ public class Main {
     public void conToLowerCase(){
         fr.toConChar("LOWER");
         display();
+    }
+
+    public void reversInt(){
+
     }
 
 }

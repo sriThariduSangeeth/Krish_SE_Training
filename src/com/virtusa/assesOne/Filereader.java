@@ -70,7 +70,7 @@ public class Filereader {
     public void toConChar(String v){
 
         System.out.println("- - - - - - - - - - - - -");
-        System.out.println("CONVERT INTO "+ v +" CASE");
+        System.out.println(ColorBank.BLUE+"CONVERT INTO "+ v +" CASE"+ColorBank.RESET);
         System.out.println("- - - - - - - - - - - - -");
         System.out.println();
         for (File file : listOfFiles) {
@@ -95,6 +95,14 @@ public class Filereader {
             }
         }
         System.out.println("- - - - - - - - - - - - -");
+    }
+
+    public String reverseInt(String x) {
+        if (x.length() == 1) {
+            return x;
+        } else {
+            return x.substring(x.length() - 1) + reverseInt(x.substring(0, x.length() - 1));
+        }
     }
 
 }
