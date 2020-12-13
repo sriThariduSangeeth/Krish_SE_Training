@@ -7,7 +7,21 @@ package com.virtusa.assesOne;
  */
 public class Filewriter {
 
-    public Filewriter(){
+    public String fileName;
+
+    public Filewriter(String filename){
         // this is Filewriter method constructor
+        this.fileName = filename;
+    }
+
+    public boolean writeStringToTxtFile(String txt){
+
+        System.out.println(this.fileName);
+        return true;
+    }
+
+    public boolean writeIntToTxtFile(String txt){
+        System.out.println(this.fileName + txt);
+        return true;
     }
 }

@@ -3,6 +3,7 @@ package com.virtusa.assesOne;
 import com.sun.media.jfxmediaimpl.HostUtils;
 import com.virtusa.util.ColorBank;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -32,36 +33,45 @@ public class Main {
         System.out.println("\n-----------------------------------------------------");
         System.out.println("- - - - - - - - - - - Main Menu- - - - - - - - - - - ");
         System.out.println();
-        System.out.println("1. Insert new words");
+        System.out.println("1. Insert new Words / Number");
         System.out.println("2. Read Saved Text file");
         System.out.println("3. Convert to Uppercase");
         System.out.println("4. Covert to Lowercase");
         System.out.println("0. Exit Program");
         System.out.println();
-
-        System.out.print("Enter option : ");
-        option = sc.nextInt();
-        switch (option){
-            case 1:
-                insertText();
-                break;
-            case 2:
-                readTextFile();
-                break;
-            case 3:
-                conToUpperCase();
-                break;
-            case 4:
-                conToLowerCase();
-                break;
-            case 0:
-                System.exit(0);
-                break;
-            default:
-                System.out.println(ColorBank.RED + "\nInvalid option!"+ColorBank.RESET);
-                display();
-                break;
+        try {
+            System.out.print("Enter option : ");
+            option = sc.nextInt();
+            switch (option){
+                case 1:
+                    insertText();
+                    break;
+                case 2:
+                    readTextFile();
+                    break;
+                case 3:
+                    conToUpperCase();
+                    break;
+                case 4:
+                    conToLowerCase();
+                    break;
+                case 0:
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println(ColorBank.RED + "\nInvalid option!"+ColorBank.RESET);
+                    display();
+                    break;
+            }
+        }catch (NumberFormatException e){
+            System.out.println(ColorBank.RED + "\nInvalid option!" + ColorBank.RESET);
+            sc.hasNextInt(); //consumes the type mismatch exception
+            display();
+        }catch (InputMismatchException ex){
+            System.out.println(ColorBank.RED + "\nInvalid option!" + ColorBank.RESET);
+            display();
         }
+
     }
 
 
@@ -70,9 +80,33 @@ public class Main {
         System.out.print(ColorBank.BLUE + " Enter your Text : " +ColorBank.RESET);
         sc = new Scanner(System.in);
         String textIn = sc.nextLine();
-        System.out.println(textIn);
+        Filewriter fw;
+
+        boolean saved = false;
+        if (validateString(textIn)){
+            fw = new Filewriter("StringText.txt");
+            saved = fw.writeStringToTxtFile(textIn);
+        }else {
+            fw = new Filewriter("IntegerText.txt");
+            saved = fw.writeIntToTxtFile(textIn);
+        }
+
+        if(saved){
+            System.out.println("Insert sucessfully ");
+        }
 
         display();
+    }
+
+    public boolean validateString(String inp){
+
+        boolean numeric = true;
+        numeric = inp.matches("-?\\d+(\\.\\d+)?");
+        if (numeric){
+            return false;
+        }else {
+            return true;
+        }
     }
 
     public void readTextFile (){
