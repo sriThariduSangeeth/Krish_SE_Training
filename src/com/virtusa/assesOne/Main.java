@@ -4,6 +4,7 @@ import com.sun.media.jfxmediaimpl.HostUtils;
 import com.virtusa.util.ColorBank;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -18,7 +19,7 @@ import static com.virtusa.util.Constants.*;
 public class Main {
 
     public Scanner sc;
-
+    Filereader fr = new Filereader("../"+DIRECTORY);
 
     public static void main(String[] args) {
         System.out.println(ColorBank.RED + "\t \t \t \tW E L C O M E " + ColorBank.RESET);
@@ -38,7 +39,7 @@ public class Main {
         System.out.println("- - - - - - - - - - - Main Menu- - - - - - - - - - - ");
         System.out.println();
         System.out.println("1. Insert new Words / Number");
-        System.out.println("2. Read Saved Text file");
+        System.out.println("2. Read All Saved Text Files");
         System.out.println("3. Convert to Uppercase");
         System.out.println("4. Covert to Lowercase");
         System.out.println("0. Exit Program");
@@ -115,22 +116,24 @@ public class Main {
 
     public void readTextFile (){
 
-        File directory = new File("../"+DIRECTORY);
-        File[] listOfFiles = directory.listFiles();
-        for (File file : listOfFiles) {
-            // Access file.getName() or do anything else here
-            System.out.println(file.getName());
+        try {
+            fr.printAllFileContent();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            System.out.println(ColorBank.RED+"\nSorry! The program could not locate the text file"+ColorBank.RESET);
         }
-
+        display();
     }
 
     public void conToUpperCase(){
-
+        fr.toConChar("UPPER");
+        display();
     }
 
     public void conToLowerCase(){
-
-        System.out.println();
+        fr.toConChar("LOWER");
+        display();
     }
 
 }
