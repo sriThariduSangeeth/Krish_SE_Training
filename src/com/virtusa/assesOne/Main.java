@@ -3,6 +3,7 @@ package com.virtusa.assesOne;
 import com.sun.media.jfxmediaimpl.HostUtils;
 import com.virtusa.util.ColorBank;
 
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -82,19 +83,19 @@ public class Main {
         String textIn = sc.nextLine();
         Filewriter fw;
 
-        boolean saved = false;
-        if (validateString(textIn)){
-            fw = new Filewriter("StringText.txt");
-            saved = fw.writeStringToTxtFile(textIn);
-        }else {
-            fw = new Filewriter("IntegerText.txt");
-            saved = fw.writeIntToTxtFile(textIn);
-        }
+        try {
+            if (validateString(textIn)){
+                fw = new Filewriter("StringText.txt");
+                fw.writeStringToTxtFile(textIn);
 
-        if(saved){
-            System.out.println("Insert sucessfully ");
+            }else {
+                fw = new Filewriter("IntegerText.txt");
+                fw.writeStringToTxtFile(textIn);
+            }
+        } catch (IOException e) {
+            System.out.println("Sorry! The program could not locate the text file");
+            insertText();
         }
-
         display();
     }
 

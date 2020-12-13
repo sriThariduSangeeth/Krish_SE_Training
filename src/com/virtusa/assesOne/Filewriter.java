@@ -1,5 +1,12 @@
 package com.virtusa.assesOne;
 
+import com.virtusa.util.ColorBank;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 /**
  * @author dtsangeeth
  * @created 13 / 12 / 2020
@@ -8,20 +15,28 @@ package com.virtusa.assesOne;
 public class Filewriter {
 
     public String fileName;
+    public FileWriter fw;
+    public BufferedWriter bw;
 
     public Filewriter(String filename){
         // this is Filewriter method constructor
         this.fileName = filename;
     }
 
-    public boolean writeStringToTxtFile(String txt){
+    public void writeStringToTxtFile(String txt) throws IOException {
 
-        System.out.println(this.fileName);
-        return true;
-    }
+        File file = new File(this.fileName);
+        if(file.exists()){
+            file.createNewFile();
+        }
 
-    public boolean writeIntToTxtFile(String txt){
-        System.out.println(this.fileName + txt);
-        return true;
+        fw = new FileWriter(file.getAbsoluteFile(),true);
+        bw = new BufferedWriter(fw);
+
+        bw.write(txt.toString());
+        bw.newLine();
+        System.out.println(ColorBank.YELLOW + "Added Successfully..."+ColorBank.RESET);
+        bw.close();
+
     }
 }
