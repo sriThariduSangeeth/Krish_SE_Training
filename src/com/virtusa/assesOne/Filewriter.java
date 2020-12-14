@@ -35,7 +35,7 @@ public class Filewriter {
 
         bw.write(txt.toString());
         bw.newLine();
-        System.out.println(ColorBank.YELLOW + "\n \t \t Added Successfully..."+ColorBank.RESET);
+        System.out.println(ColorBank.YELLOW + "\n \t \t Successfully added to "+this.fileName.split("[, ?.@]+")[0]+" File ..."+ColorBank.RESET);
         bw.close();
 
     }

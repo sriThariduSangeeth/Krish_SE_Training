@@ -7,7 +7,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import static com.virtusa.util.Constants.TXTFILEONE;
-import static com.virtusa.util.Constants.TXTFILETWO;
 
 /**
  * @author dtsangeeth
@@ -95,14 +94,6 @@ public class Filereader {
             }
         }
         System.out.println("- - - - - - - - - - - - -");
-    }
-
-    public String reverseInt(String x) {
-        if (x.length() == 1) {
-            return x;
-        } else {
-            return x.substring(x.length() - 1) + reverseInt(x.substring(0, x.length() - 1));
-        }
     }
 
 }

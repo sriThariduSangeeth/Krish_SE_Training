@@ -143,7 +143,12 @@ public class Main {
     }
 
     public void reversInt(){
-        roi.reverseNumberFirstMeth();
+        try {
+            roi.reverseNumberFirstMeth();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        display();
     }
 
 }
