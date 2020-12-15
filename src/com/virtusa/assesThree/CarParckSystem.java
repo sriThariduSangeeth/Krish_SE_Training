@@ -7,4 +7,6 @@ package com.virtusa.assesThree;
  */
 public interface CarParckSystem {
 
+    void initialize();
+
 }

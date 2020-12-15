@@ -1,6 +1,8 @@
 package com.virtusa.assesOne;
 
 import com.sun.media.jfxmediaimpl.HostUtils;
+import com.virtusa.assesThree.CarParckAssistant;
+import com.virtusa.assesThree.CarParckSystem;
 import com.virtusa.assesTwo.ReversObjInt;
 import com.virtusa.util.ColorBank;
 
@@ -45,6 +47,7 @@ public class Main {
         System.out.println("3. Convert to Uppercase");
         System.out.println("4. Covert to Lowercase");
         System.out.println("5. Show after revers digit");
+        System.out.println("6. Log into CarPark system");
         System.out.println("0. Exit Program");
         System.out.println();
         try {
@@ -66,6 +69,9 @@ public class Main {
                 case 5:
                     reversInt();
                     break;
+                case 6:
+                    CarParckSystem carParckSystem = new CarParckAssistant();
+                    carParckSystem.initialize();
                 case 0:
                     System.exit(0);
                     break;

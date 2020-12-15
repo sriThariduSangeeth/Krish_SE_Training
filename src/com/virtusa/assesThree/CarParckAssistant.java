@@ -5,10 +5,15 @@ package com.virtusa.assesThree;
  * @created 14 / 12 / 2020
  * @project LPTraining
  */
-public class CarParckAssistant {
+public class CarParckAssistant implements CarParckSystem {
 
 
-    public CarParckAssistant(){
+    @Override
+    public void initialize() {
+        this.run();
+    }
 
+    private void run(){
+        System.out.println("this is car park");
     }
 }

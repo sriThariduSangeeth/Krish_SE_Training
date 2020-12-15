@@ -1,6 +1,7 @@
 package com.virtusa.assesThree;
 
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 /**
  * @author dtsangeeth
@@ -13,8 +14,23 @@ public abstract class Vehicle {
     public String vehicleType;
     public String idPlate;
     public String vehicleBrand;
-    public DateTimeFormatter dateTime;
+    public Date dateTime;
 
+    public abstract String getVehicleType();
+
+    public abstract void setVehicleType(String vehicleType);
+
+    public abstract String getIdPlate();
+
+    public abstract void setIdPlate(String idPlate);
+
+    public abstract String getVehicleBrand();
+
+    public abstract void setVehicleBrand(String vehicleBrand);
+
+    public abstract Date getDateTime();
+
+    public abstract void setDateTime(Date dateTime);
 
 
 }
