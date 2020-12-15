@@ -1,7 +1,10 @@
 package com.virtusa.assesThree;
 
+import com.virtusa.assesOne.Filewriter;
+import com.virtusa.assesOne.Main;
 import com.virtusa.util.ColorBank;
 
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -16,22 +19,26 @@ public class CarParckAssistant implements CarParckSystem {
 
     private Scanner sc = null;
     //Create vehicle object array
-    static List<Vehicle> vehicleslist = new ArrayList<>();
+    public List <Vehicle> vehicleslist = null;
     //free slot counter
-    static int slotCounter = 20;
+    static int slotCounter = 10;
+    //keeps track of the different vehicle parked
+    static int carCounter,vanCounter,bikeCounter;
+    private Filewriter filewriter;
+
     private Vehicle veh;
-    DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+    DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
     Calendar cal = Calendar.getInstance();
 
     @Override
-    public void initialize() {
-
+    public void initialize(List<Vehicle> list) throws IOException {
+        this.vehicleslist = list;
         System.out.println(ColorBank.PURPLE + "\n \t \t \tW E L C O M E \t T O \t T H E \t C A R P A R K" + ColorBank.RESET);
         System.out.println();
         this.run();
     }
 
-    private void run(){
+    private void run() throws IOException {
 
 
 //        System.out.println(dateFormat.format(cal.getTime()));
@@ -82,7 +89,7 @@ public class CarParckAssistant implements CarParckSystem {
         }
     }
 
-    private void addVehicle() throws InputMismatchException,NumberFormatException{
+    private void addVehicle() throws InputMismatchException, NumberFormatException, IOException {
 
         sc = new Scanner(System.in);
         int selecttype;
@@ -100,6 +107,7 @@ public class CarParckAssistant implements CarParckSystem {
 
         if(getFreeSlots()){
 
+            filewriter = new Filewriter("");
             System.out.println("Please select the type of the Vehicle");
             System.out.println("\t 1. Car");
             System.out.println("\t 2. Van");
@@ -162,15 +170,20 @@ public class CarParckAssistant implements CarParckSystem {
                 default:
                     break;
             }
-
             veh = VehicleFactory.getVehicle(vtype,id,brand,date,cargo,tire,color,door,capacity);
+            this.writeToFile(veh);
             vehicleslist.add(veh);
+            slotCounter--;
+            this.run();
+        }else {
+            return;
         }
 
     }
 
-    private void deleteVehicle(){
-
+    private void deleteVehicle() throws IOException {
+        System.out.println(vehicleslist);
+        this.run();
     }
 
     private void allListOfVehicles(){
@@ -178,7 +191,15 @@ public class CarParckAssistant implements CarParckSystem {
     }
 
     public void backToMainMenu(){
+        Main m = new Main();
+        m.display();
+    }
 
+    public void writeToFile(Vehicle vehicle) throws IOException {
+
+        String fileName = dateFormat.format(cal.getTime()).toString()+".txt";
+        filewriter = new Filewriter(fileName.replaceAll("/","-"));
+        filewriter.writeStringToTxtFile(vehicle.toString());
     }
 
     public boolean getFreeSlots(){

@@ -3,13 +3,16 @@ package com.virtusa.assesOne;
 import com.sun.media.jfxmediaimpl.HostUtils;
 import com.virtusa.assesThree.CarParckAssistant;
 import com.virtusa.assesThree.CarParckSystem;
+import com.virtusa.assesThree.Vehicle;
 import com.virtusa.assesTwo.ReversObjInt;
 import com.virtusa.util.ColorBank;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 import static com.virtusa.util.Constants.*;
@@ -21,6 +24,7 @@ import static com.virtusa.util.Constants.*;
  */
 public class Main {
 
+    static List<Vehicle> vehicleslist = new ArrayList<>();
     public Scanner sc;
     Filereader fr = new Filereader("../"+DIRECTORY);
     ReversObjInt roi = new ReversObjInt("../"+DIRECTORY);
@@ -71,7 +75,7 @@ public class Main {
                     break;
                 case 6:
                     CarParckSystem carParckSystem = new CarParckAssistant();
-                    carParckSystem.initialize();
+                    carParckSystem.initialize(vehicleslist);
                 case 0:
                     System.exit(0);
                     break;
@@ -86,6 +90,9 @@ public class Main {
             display();
         }catch (InputMismatchException ex){
             System.out.println(ColorBank.RED + "\nInvalid option!" + ColorBank.RESET);
+            display();
+        }catch (IOException io){
+            System.out.println(ColorBank.RED + "\nText File not found!" + ColorBank.RESET);
             display();
         }
 

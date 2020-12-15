@@ -33,4 +33,13 @@ public abstract class Vehicle {
     public abstract void setDateTime(Date dateTime);
 
 
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "vehicleType='" + vehicleType + '\'' +
+                ", idPlate='" + idPlate + '\'' +
+                ", vehicleBrand='" + vehicleBrand + '\'' +
+                ", dateTime=" + dateTime +
+                '}';
+    }
 }
