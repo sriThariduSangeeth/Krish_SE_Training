@@ -1,8 +1,10 @@
 package com.virtusa.assesOne;
 
+import com.virtusa.exception.NoSuchFileException;
 import com.virtusa.util.ColorBank;
 
 import java.io.*;
+import java.nio.BufferOverflowException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
@@ -51,17 +53,14 @@ public class Filereader {
     }
 
     //checking if the text file is empty
-    static boolean isEmptyFile(String source) {
-        try {
+    static boolean isEmptyFile(String source) throws IOException {
 
             for (String line : Files.readAllLines(Paths.get(source))) {
                 if (line != null && !line.trim().isEmpty()) {
                     return false;
                 }
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
         // Default to true.
         return true;
     }

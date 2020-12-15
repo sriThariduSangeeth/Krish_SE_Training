@@ -2,10 +2,8 @@ package com.virtusa.assesOne;
 
 import com.virtusa.util.ColorBank;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.nio.file.FileAlreadyExistsException;
 
 /**
  * @author dtsangeeth

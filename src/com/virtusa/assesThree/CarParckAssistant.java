@@ -4,6 +4,7 @@ import com.virtusa.assesOne.Filewriter;
 import com.virtusa.assesOne.Main;
 import com.virtusa.util.ColorBank;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -132,7 +133,7 @@ public class CarParckAssistant implements CarParckSystem {
 
                     System.out.println("Please enter the Color of the Car");
                     color = sc.next();
-
+                    carCounter++;
                     break;
 
                 case 2:
@@ -150,7 +151,7 @@ public class CarParckAssistant implements CarParckSystem {
 
                     System.out.println("Please enter the number of tires in van");
                     tire = sc.nextInt();
-
+                    vanCounter++;
                     break;
                 case 3:
                     vtype = "Motorbike";
@@ -165,7 +166,7 @@ public class CarParckAssistant implements CarParckSystem {
 
                     System.out.println("Please enter the engine capacity of the Motorbike");
                     capacity = sc.next();
-
+                    bikeCounter++;
                     break;
                 default:
                     break;
@@ -181,13 +182,62 @@ public class CarParckAssistant implements CarParckSystem {
 
     }
 
-    private void deleteVehicle() throws IOException {
-        System.out.println(vehicleslist);
+    private void deleteVehicle() throws InputMismatchException, IOException {
+        System.out.println();
+        System.out.println("- - - - - - - - - Delete a vehicle- - - - - - - - - \n ");
+
+        float totalVehicles = (carCounter+vanCounter+bikeCounter);
+
+        if (totalVehicles==0) {
+            System.out.println(ColorBank.RED+"The parking is empty at the moment! Please try again later."+ColorBank.RESET);
+        }else{
+            System.out.println("List of Vehicles in the parking\n");
+            for (Vehicle vehicle : vehicleslist) {
+                String ID = vehicle.getIdPlate();
+                if (ID != null)
+                    System.out.println("\t" + ID + " \t (" + vehicle.getVehicleType()+")");
+            }
+            System.out.println("\nPlease select the vehicle you wish to delete :");
+            String deleteVehicle = sc.next();
+            //getIndexProperty method will return an integer
+            String leavingVehicle = vehicleslist.get(getIndexByProperty(deleteVehicle)).getVehicleType();
+                slotCounter++;
+                carCounter--;
+            vehicleslist.remove(getIndexByProperty(deleteVehicle));
+            System.out.println(ColorBank.YELLOW + "\nA " + leavingVehicle + " is leaving the park." + ColorBank.RESET);
+        }
         this.run();
     }
 
-    private void allListOfVehicles(){
+    //returns the index of the desired vehicle
+    private int getIndexByProperty(String yourString) {
+        for (int i = 0; i < vehicleslist.size(); i++) {
+            if (vehicleslist.get(i).getIdPlate() !=null && vehicleslist.get(i).getIdPlate().equalsIgnoreCase(yourString)) {
+                //System.out.println(i);
+                return i;
+            }
+        }
+        System.out.println(ColorBank.RED+"\nSorry! There's no vehicle in the park with the specified ID plate.\n"+ColorBank.RESET);
+        return -1;// not there is list
+    }
 
+    private void allListOfVehicles() throws IOException {
+
+        System.out.println();
+        System.out.println("- - - - - - - - List of Vehicles in the Parking - - - - - - - - \n ");
+
+        float totalVehicles = (carCounter+vanCounter+bikeCounter);
+
+        if (totalVehicles==0) {
+            System.out.println(ColorBank.RED+"The parking is empty at the moment! Please try again later."+ColorBank.RESET);
+        }else {
+            for (Vehicle vehicle : vehicleslist) {
+
+                System.out.println(ColorBank.BLUE + "ID Plate - " + ColorBank.RESET + vehicle.getIdPlate() + " " +
+                        ColorBank.BLUE + "Entrance Date & Time - " + ColorBank.RESET + vehicle.getDateTime() +" "+ ColorBank.BLUE + " The type of the vehicle - " + ColorBank.RESET + vehicle.getVehicleType());
+            }
+        }
+        this.run();
     }
 
     public void backToMainMenu(){
@@ -196,7 +246,6 @@ public class CarParckAssistant implements CarParckSystem {
     }
 
     public void writeToFile(Vehicle vehicle) throws IOException {
-
         String fileName = dateFormat.format(cal.getTime()).toString()+".txt";
         filewriter = new Filewriter(fileName.replaceAll("/","-"));
         filewriter.writeStringToTxtFile(vehicle.toString());

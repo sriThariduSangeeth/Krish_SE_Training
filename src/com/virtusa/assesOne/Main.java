@@ -101,7 +101,7 @@ public class Main {
 
     public void insertText (){
         System.out.println();
-        System.out.print(ColorBank.BLUE + " Enter your Text : " +ColorBank.RESET);
+        System.out.print(ColorBank.BLUE + "Enter your Text : " +ColorBank.RESET);
         sc = new Scanner(System.in);
         String textIn = sc.nextLine();
         Filewriter fw;
