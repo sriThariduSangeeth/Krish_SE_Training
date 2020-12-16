@@ -158,6 +158,7 @@ public class Main {
     public void reversInt(){
         try {
             roi.reverseNumberFirstMeth();
+            roi.reverseNumberSecondMeth();
         } catch (IOException e) {
             e.printStackTrace();
         }
