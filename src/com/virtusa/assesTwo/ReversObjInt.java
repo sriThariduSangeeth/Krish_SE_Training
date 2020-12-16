@@ -56,7 +56,7 @@ public class ReversObjInt {
     }
 
     public void reverseNumberSecondMeth (){
-        System.out.println("- - - - - - - - - - - - -");
+        System.out.println("\n- - - - - - - - - - - - -");
         System.out.println(ColorBank.BLUE+"REVERS SECOND METHOD"+ColorBank.RESET);
         try {
             String line;
@@ -79,7 +79,7 @@ public class ReversObjInt {
 
                     list.add(Integer.valueOf(re.intValue()));
                 }
-                System.out.println(list);
+                System.out.format(leftAlignFormat,line,list);
                 con++;
             }
             if (br != null) br.close();
