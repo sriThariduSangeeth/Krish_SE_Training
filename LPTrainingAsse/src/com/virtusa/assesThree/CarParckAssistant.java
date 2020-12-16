@@ -4,7 +4,6 @@ import com.virtusa.assesOne.Filewriter;
 import com.virtusa.assesOne.Main;
 import com.virtusa.util.ColorBank;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

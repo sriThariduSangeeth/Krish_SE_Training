@@ -3,7 +3,6 @@ package com.virtusa.assesOne;
 import com.virtusa.util.ColorBank;
 
 import java.io.*;
-import java.nio.file.FileAlreadyExistsException;
 
 /**
  * @author dtsangeeth

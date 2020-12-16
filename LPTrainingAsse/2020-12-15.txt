@@ -1,0 +1,7 @@
+Vehicle{vehicleType='Car', idPlate='efwe', vehicleBrand='efwf', dateTime=Tue Dec 15 20:25:15 IST 2020}
+Vehicle{vehicleType='Car', idPlate='CDV-2343', vehicleBrand='Toyota', dateTime=Tue Dec 15 22:47:20 IST 2020}
+Vehicle{vehicleType='Van', idPlate='FGD-3243', vehicleBrand='Toyota', dateTime=Tue Dec 15 22:50:30 IST 2020}
+Vehicle{vehicleType='Car', idPlate='FGD-2343', vehicleBrand='Toyota', dateTime=Tue Dec 15 22:52:03 IST 2020}
+Vehicle{vehicleType='Motorbike', idPlate='FGH-3436', vehicleBrand='Honda', dateTime=Tue Dec 15 22:52:25 IST 2020}
+Vehicle{vehicleType='Van', idPlate='FGD-3425', vehicleBrand='Toyota', dateTime=Tue Dec 15 22:55:46 IST 2020}
+Vehicle{vehicleType='Car', idPlate='FGH-3432', vehicleBrand='Audi', dateTime=Tue Dec 15 22:56:15 IST 2020}

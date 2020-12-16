@@ -1,6 +1,5 @@
 package com.virtusa.assesThree;
 
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 /**
@@ -8,36 +7,24 @@ import java.util.Date;
  * @created 15 / 12 / 2020
  * @project LPTraining
  */
-public class Van  extends Vehicle{
+public class Motorbike  extends Vehicle{
 
 
-    private Double cargoVolume;
-    private int numberOfTire;
+    private String engineCapacity;
 
-    public Van(String type , String id , String brand , Date date , Double cargo , int tire){
+    public Motorbike(String type , String id , String brand , Date date , String capacity){
         vehicleType = type;
         idPlate = id;
         vehicleBrand = brand;
         dateTime = date;
-        cargoVolume = cargo;
-        numberOfTire = tire;
+        engineCapacity = capacity;
+    }
+    public String getEngineCapacity() {
+        return engineCapacity;
     }
 
-
-    public int getNumberOfTire() {
-        return numberOfTire;
-    }
-
-    public void setNumberOfTire(int numberOfTire) {
-        this.numberOfTire = numberOfTire;
-    }
-
-    public Double getCargoVolume() {
-        return cargoVolume;
-    }
-
-    public void setCargoVolume(Double cargoVolume) {
-        this.cargoVolume = cargoVolume;
+    public void setEngineCapacity(String engineCapacity) {
+        this.engineCapacity = engineCapacity;
     }
 
     @Override
