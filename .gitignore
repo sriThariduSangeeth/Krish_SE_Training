@@ -11,7 +11,8 @@
 
 # Log file
 *.log
-
+#idea file
+.idea/
 # BlueJ files
 *.ctxt
 
