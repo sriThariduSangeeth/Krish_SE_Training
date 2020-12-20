@@ -1,6 +1,9 @@
 package com.virtusa.assesTwo;
 
+import com.virtusa.main.Main;
 import com.virtusa.util.ColorBank;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.math.BigInteger;
@@ -20,10 +23,10 @@ import static com.virtusa.util.Constants.TXTFILETWO;
 public class ReversObjInt {
 
     private File directory;
-//    private File[] listOfFiles;
     private BufferedReader br = null;
     private FileReader fr = null;
     private String leftAlignFormat = "| %-17s | %-15s | %n";
+    private static final Logger LOGGER = LoggerFactory.getLogger(ReversObjInt.class);
 
     public ReversObjInt(String path){
         directory = new File(path);
@@ -85,9 +88,9 @@ public class ReversObjInt {
             if (br != null) br.close();
 
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            LOGGER.error("Sorry... File could not found !", e);
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.error("Sorry... There is a problem with text file !", e);
         }
     }
 }

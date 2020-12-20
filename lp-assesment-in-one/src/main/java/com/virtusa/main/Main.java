@@ -120,7 +120,7 @@ public class Main {
                 fw.writeStringToTxtFile(textIn);
             }
         } catch (IOException e) {
-            System.out.println("Sorry! The program could not locate the text file");
+            LOGGER.error("Sorry! The program could not locate the text file",e);
             insertText();
         }
         display();
@@ -142,9 +142,9 @@ public class Main {
         try {
             fr.printAllFileContent();
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            LOGGER.error("Sorry... File could not found !", e);
         } catch (IOException e) {
-            System.out.println(ColorBank.RED+"\nSorry! The program could not locate the text file"+ColorBank.RESET);
+            LOGGER.error("Sorry! The program could not locate the text file", e);
         }
         display();
     }
