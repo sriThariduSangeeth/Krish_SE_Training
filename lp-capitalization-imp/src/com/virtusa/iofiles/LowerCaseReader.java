@@ -18,7 +18,7 @@ public class LowerCaseReader extends BufferedReader {
     @Override
     public String readLine() throws IOException {
         String line = super.readLine();
-        if (line.isEmpty() || line == null) {
+        if (line == null) {
             return null;
         } else {
             return line.toLowerCase();

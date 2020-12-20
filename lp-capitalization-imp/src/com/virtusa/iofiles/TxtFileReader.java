@@ -2,12 +2,11 @@ package com.virtusa.iofiles;
 
 import com.virtusa.util.ColorBank;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+
+import static com.virtusa.util.Constants.TXTFILEONE;
 
 /**
  * @author dtsangeeth
@@ -61,5 +60,24 @@ public class TxtFileReader {
         return true;
     }
 
+    public void convertIntoLower() throws IOException {
 
+        lbr = new LowerCaseReader(new FileReader(TXTFILEONE));
+
+        String line = null;
+        while ((line = lbr.readLine()) != null) {
+            System.out.println(line);
+        }
+    }
+
+    public void convertIntoUpper() throws IOException {
+
+        ubr = new UpperCaseReader(new FileReader(TXTFILEONE));
+
+        String line;
+        while ((line = lbr.readLine()) != null) {
+            System.out.println(line);
+        }
+
+    }
 }

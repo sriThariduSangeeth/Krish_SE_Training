@@ -38,7 +38,7 @@ public class Application {
         System.out.println("\n-----------------------------------------------------");
         System.out.println("- - - - - - - - - - - Main Menu- - - - - - - - - - - ");
         System.out.println();
-        System.out.println("1. Insert new Number");
+        System.out.println("1. Insert new String value");
         System.out.println("2. Read All Saved Text Files");
         System.out.println("3. Convert to Uppercase");
         System.out.println("4. Covert to Lowercase");
@@ -74,6 +74,12 @@ public class Application {
             display();
         } catch (InputMismatchException ex) {
             System.out.println(ColorBank.RED + "\nInvalid option!" + ColorBank.RESET);
+            display();
+        } catch (FileNotFoundException fex) {
+            System.out.println(ColorBank.RED + "\nValid file not found!" + ColorBank.RESET);
+            display();
+        } catch (IOException ioe) {
+            System.out.println(ColorBank.RED + "\nfile not found and line missing !" + ColorBank.RESET);
             display();
         }
 
@@ -114,20 +120,22 @@ public class Application {
         try {
             fr.printAllFileContent();
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println(ColorBank.RED + "\nSorry! The program could not find the valid text file" + ColorBank.RESET);
+            display();
         } catch (IOException e) {
             System.out.println(ColorBank.RED + "\nSorry! The program could not locate the text file" + ColorBank.RESET);
+            display();
         }
+
+    }
+
+    public void conToUpperCase() throws IOException {
+        fr.convertIntoUpper();
         display();
     }
 
-    public void conToUpperCase() {
-//        fr.toConChar("UPPER");
-        display();
-    }
-
-    public void conToLowerCase() {
-//        fr.toConChar("LOWER");
+    public void conToLowerCase() throws IOException {
+        fr.convertIntoLower();
         display();
     }
 }

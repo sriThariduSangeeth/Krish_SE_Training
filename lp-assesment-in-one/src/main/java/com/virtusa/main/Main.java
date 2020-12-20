@@ -84,7 +84,7 @@ public class Main {
                     System.exit(0);
                     break;
                 default:
-                    System.out.println(ColorBank.RED + "\nInvalid option!"+ColorBank.RESET);
+                    LOGGER.info("Invalid option!");
                     display();
                     break;
             }
