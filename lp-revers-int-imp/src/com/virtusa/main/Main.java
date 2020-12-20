@@ -1,13 +1,16 @@
 package com.virtusa.main;
 
+import com.virtusa.iofiles.TxtFileReader;
+import com.virtusa.iofiles.TxtFileWriter;
 import com.virtusa.reverspart.ReversObjInt;
 import com.virtusa.util.ColorBank;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import static com.virtusa.util.Constants.DIRECTORY;
+import static com.virtusa.util.Constants.*;
 
 /**
  * @author dtsangeeth
@@ -18,7 +21,7 @@ import static com.virtusa.util.Constants.DIRECTORY;
 public class Main {
 
     public Scanner sc;
-//    Filereader fr = new Filereader("../"+DIRECTORY);
+    TxtFileReader fr = new TxtFileReader("../"+DIRECTORY);
     ReversObjInt roi = new ReversObjInt("../"+DIRECTORY);
 
     public static void main(String[] args) {
@@ -80,12 +83,59 @@ public class Main {
     }
 
     private void reversInt() {
+        try {
+            roi.reverseNumberFirstMeth();
+            roi.reverseNumberSecondMeth();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        display();
     }
 
     private void readTextFile() {
+        try {
+            fr.printAllFileContent();
+        } catch (FileNotFoundException e) {
+            System.out.println(ColorBank.RED+"\nSorry! The program could not find the text file"+ColorBank.RESET);
+        } catch (IOException e) {
+            System.out.println(ColorBank.RED+"\nSorry! The program could not locate the text file"+ColorBank.RESET);
+        }
+        display();
     }
 
     private void insertText() {
+
+        System.out.println();
+        System.out.print(ColorBank.BLUE + "Enter your Text : " +ColorBank.RESET);
+        sc = new Scanner(System.in);
+        String textIn = sc.nextLine();
+        TxtFileWriter fw;
+
+        try {
+            if (validateString(textIn)){
+                fw = new TxtFileWriter(TXTFILEONE);
+                fw.writeStringToTxtFile(textIn);
+
+            }else {
+                fw = new TxtFileWriter(TXTFILETWO);
+                fw.writeStringToTxtFile(textIn);
+            }
+        } catch (IOException e) {
+            System.out.println("Sorry! The program could not locate the text file");
+            insertText();
+        }
+        display();
+    }
+
+    public boolean validateString(String inp){
+
+        boolean numeric = true;
+        numeric = inp.matches("-?\\d+(\\.\\d+)?");
+        if (numeric){
+            return false;
+        }else {
+            return true;
+        }
     }
 
 
