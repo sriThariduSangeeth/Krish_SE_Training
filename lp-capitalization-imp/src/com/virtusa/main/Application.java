@@ -127,6 +127,7 @@ public class Application {
             display();
         }
 
+        display();
     }
 
     public void conToUpperCase() throws IOException {
