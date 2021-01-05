@@ -18,7 +18,6 @@ public class TxtFileReader {
     private File directory;
     private File[] listOfFiles;
     private LowerCaseReader lbr = null;
-    private UpperCaseReader ubr = null;
     private BufferedReader br = null;
     private FileReader fr = null;
 
@@ -46,6 +45,8 @@ public class TxtFileReader {
                 }
             }
         }
+        br.close();
+        fr.close();
     }
 
     //checking if the text file is empty
@@ -64,7 +65,7 @@ public class TxtFileReader {
 
         lbr = new LowerCaseReader(new FileReader(TXTFILEONE));
 
-        String line = null;
+        String line;
         while ((line = lbr.readLine()) != null) {
             System.out.println(line);
         }
@@ -72,7 +73,7 @@ public class TxtFileReader {
 
     public void convertIntoUpper() throws IOException {
 
-        ubr = new UpperCaseReader(new FileReader(TXTFILEONE));
+        UpperCaseReader ubr = new UpperCaseReader(new FileReader(new File(TXTFILEONE)));
 
         String line;
         while ((line = lbr.readLine()) != null) {

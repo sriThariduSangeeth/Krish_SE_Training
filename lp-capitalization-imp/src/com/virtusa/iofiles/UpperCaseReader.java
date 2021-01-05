@@ -19,7 +19,7 @@ public class UpperCaseReader extends BufferedReader {
     @Override
     public String readLine() throws IOException {
         String line = super.readLine();
-        if (line.isEmpty() || line == null) {
+        if (line == null) {
             return null;
         } else {
             return line.toUpperCase();
