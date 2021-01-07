@@ -1,8 +1,2 @@
 server:
-  port: 8595
-spring:
-  cloud:
-    config:
-      server:
-        git:
-          uri:
+  port: 8292
