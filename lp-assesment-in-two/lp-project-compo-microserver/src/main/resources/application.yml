@@ -1,6 +1,6 @@
 spring:
   application:
-    name: project-service
+    name: project
   profiles:
     active: dev
   datasource:
@@ -12,3 +12,4 @@ spring:
     hibernate:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: update
