@@ -1,2 +1,5 @@
-server:
-  port: 8191
+spring:
+  application:
+    name: project
+  profiles:
+    active: dev

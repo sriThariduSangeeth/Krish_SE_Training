@@ -5,4 +5,8 @@ spring:
     config:
       server:
         git:
-          uri:
+          uri: https://github.com/sriThariduSangeeth/LPTraining
+          search-paths:
+            - 'lp-spring-cloud-config-store/*service'
+  application:
+    name: config-server

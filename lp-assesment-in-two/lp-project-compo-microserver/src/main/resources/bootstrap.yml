@@ -1,0 +1,5 @@
+spring:
+  cloud:
+    config:
+      enabled: true
+      uri: http://127.0.0.1:8595/project

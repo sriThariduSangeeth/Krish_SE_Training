@@ -1,6 +1,8 @@
-server:
-  port: 8090
 spring:
+  application:
+    name: project-service
+  profiles:
+    active: dev
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/lpproject
     username: root
@@ -10,4 +12,3 @@ spring:
     hibernate:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-      ddl-auto: update
