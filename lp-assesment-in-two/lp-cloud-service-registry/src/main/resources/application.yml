@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: registry
+  profiles:
+    active: dev
