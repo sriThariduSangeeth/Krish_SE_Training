@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
  * @created 07 / 01 / 2021
  * @project lp-task-compo-microserver
  */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
