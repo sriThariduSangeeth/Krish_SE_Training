@@ -1,5 +1,5 @@
 server:
-  port: 8595
+  port: 9196
 spring:
   cloud:
     config:
