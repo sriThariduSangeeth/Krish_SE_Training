@@ -1,8 +1,6 @@
 package com.virtusa.lptraining.projectcomposerver.services;
 
 import com.virtusa.lptraining.projectcomposerver.entity.Project;
-import com.virtusa.lptraining.projectcomposerver.repository.ProjectRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -11,13 +9,9 @@ import org.springframework.stereotype.Service;
  * @project lp-project-compo-microserver
  */
 @Service
-public class ProjectService {
+public interface ProjectService {
 
-    @Autowired
-    private ProjectRepository projectRepository;
+    Project saveProject(Project project);
+    Project fetchProjectById(int id);
 
-
-    public void saveProject(String project) {
-        System.out.println(project);
-    }
 }

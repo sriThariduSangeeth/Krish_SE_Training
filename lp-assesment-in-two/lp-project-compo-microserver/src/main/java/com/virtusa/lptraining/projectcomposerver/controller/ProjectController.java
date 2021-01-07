@@ -1,8 +1,10 @@
 package com.virtusa.lptraining.projectcomposerver.controller;
 
+import com.google.gson.Gson;
 import com.virtusa.lptraining.projectcomposerver.entity.Project;
 import com.virtusa.lptraining.projectcomposerver.services.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -19,16 +21,19 @@ public class ProjectController {
     private ProjectService projectService;
 
 
-    @PostMapping("/")
-    public String saveProject(@RequestBody String project){
-
-        projectService.saveProject(project);
-        return "";
+    @PostMapping("")
+    public String saveProject(@RequestBody Project project){
+        return new Gson().toJson(projectService.saveProject(project));
     }
 
     @GetMapping("/{id}")
-    public String findProjectById(@PathVariable("id") int id){
-
-        return "Hello "+id ;
+    public ResponseEntity<String> findProjectById(@PathVariable("id") int id){
+        Project project = projectService.fetchProjectById(id);
+        if(project == null){
+            return ResponseEntity.notFound().build();
+        }else {
+            return ResponseEntity.ok().body(new Gson().toJson(project));
+        }
     }
+
 }
