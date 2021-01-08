@@ -1,0 +1,28 @@
+server:
+  port: 9191
+spring:
+  application:
+    name: api-gateway
+  profiles:
+    active: dev
+
+  cloud:
+    gateway:
+      routes:
+        - id : projectservice
+          uri : lb://projectservice
+          predicates :
+            - path=/project/**
+        - id: taskservice
+          uri: lb://taskservice
+          predicates:
+            - path=/task/**
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
