@@ -1,12 +1,13 @@
 server:
   port: 8595
 spring:
+  application:
+    name: config-server
   cloud:
     config:
       server:
         git:
           uri: https://github.com/sriThariduSangeeth/LPTraining
           search-paths:
+            - 'lp-spring-cloud-config-store/'
             - 'lp-spring-cloud-config-store/*service'
-  application:
-    name: config-server
