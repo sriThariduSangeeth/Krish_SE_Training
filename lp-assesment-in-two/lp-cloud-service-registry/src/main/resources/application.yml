@@ -3,3 +3,9 @@ spring:
     name: registry
   profiles:
     active: dev
+server:
+  port: 8761
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
