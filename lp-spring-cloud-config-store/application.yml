@@ -10,8 +10,8 @@ eureka:
 project:
   service :
     base :
-      uri : http://projectservice/project/
+      uri : http://projectservice/project
 task:
   service :
     base :
-      uri : http://taskservice/project/
+      uri : http://taskservice/task
