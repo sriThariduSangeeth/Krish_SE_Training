@@ -20,5 +20,6 @@ public interface ProjectService {
     TaskInProjectResponse fetchProjectById(int id , String type) throws JpaSystemException;
     boolean checkProjectStateById(int id) throws JpaSystemException;
     List<TaskInProjectResponse> getAllProjects (String type) throws JpaSystemException;
+    Project changeStateByProjectId(int id) throws JpaSystemException;
 
 }

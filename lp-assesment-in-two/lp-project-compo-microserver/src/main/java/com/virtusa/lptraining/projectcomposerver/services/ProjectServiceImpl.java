@@ -97,9 +97,21 @@ public class ProjectServiceImpl implements ProjectService{
                 prores.forEach(project -> {
                     finalList.add(new ProjectSimpleResponse(project));
                 });
-                return finalList;
             }
         }
-        return null;
+        return finalList;
     }
+
+    @Override
+    public Project changeStateByProjectId(int id) throws JpaSystemException {
+
+        if(projectRepository.findProjectStateByProjectId(id)){
+
+        }else {
+
+        }
+        return  projectRepository.updateProjectStateByProjectId(id);
+    }
+
+
 }

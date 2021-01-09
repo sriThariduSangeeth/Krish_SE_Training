@@ -27,14 +27,23 @@ public class ProjectController {
     @Autowired
     private ProjectService projectService;
 
-
-    @PostMapping("/")
+    /** Tested call
+     * TODO - Exception Handle
+     * @RETURN - Save new project
+     * @PARAM - Project Object
+     **/
+    @PostMapping("")
     public String saveProject(@RequestBody Project project){
         log.info("Create new Project");
         return new Gson().toJson(projectService.saveProject(project));
     }
 
-    @GetMapping("/")
+    /** Tested call
+     TODO - Exception Handle
+     @RETURN - list of Projects
+     @PARM - type = "all"
+     */
+    @GetMapping("")
     public ResponseEntity<String> getAllProjectLst(@RequestParam(required = false) String type){
 
         try {
@@ -48,6 +57,11 @@ public class ProjectController {
         }
     }
 
+    /** Tested call
+     * TODO - Exception Handle
+     * @RETURN - Get project by projectId
+     * @PARAM - projectId and type = "all"
+     **/
     @GetMapping("/{id}")
     public ResponseEntity<String> findProjectById(@PathVariable("id") int id , @RequestParam(required = false) String type){
         log.info("Find Project using ID :" + id);
@@ -60,6 +74,12 @@ public class ProjectController {
             return ResponseEntity.ok().body(new Gson().toJson(project));
         }
     }
+
+    /** Tested call
+     * TODO - Exception Handle
+     * @RETURN - Get project is Active ot not
+     * @PARAM - projectId
+     **/
     @GetMapping("/{id}/state")
     public ResponseEntity<String> checkProjectState(@PathVariable("id") int id){
 
@@ -77,6 +97,26 @@ public class ProjectController {
                         .body("Inactive");
             }
 
+        }catch (JpaSystemException jp){
+            log.error("Project table configuration failed", jp.getStackTrace());
+            return ResponseEntity
+                    .status(HttpStatus.UNAUTHORIZED)
+                    .body("Invalid Project id : "+id+". JPA db error " );
+        }
+    }
+
+    /** Tested call
+     * TODO - Exception Handle
+     * @RETURN - Update project is Active ot not
+     * @PARAM - projectId
+     **/
+    @PutMapping("/{id}/state")
+    public ResponseEntity<String> changeStateByProjectId(@PathVariable("id") int id){
+        try {
+            Project pro = projectService.changeStateByProjectId(id);
+            return ResponseEntity
+                    .status(HttpStatus.OK)
+                    .body(new Gson().toJson(pro));
         }catch (JpaSystemException jp){
             log.error("Project table configuration failed", jp.getStackTrace());
             return ResponseEntity
