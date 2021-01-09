@@ -86,7 +86,7 @@ public class ProjectServiceImpl implements ProjectService{
         List<TaskInProjectResponse> finalList = new ArrayList<>();
         List<Project> prores = projectRepository.findAll();
 
-        if(!type.isEmpty() && type.equalsIgnoreCase("all")){
+        if(type !=null && type.equalsIgnoreCase("all")){
             if (!prores.isEmpty()){
                 prores.forEach(pro ->{
                     finalList.add( new ProjectDetailResponse(pro,getAllTaskForProject(pro.getProjectId())));

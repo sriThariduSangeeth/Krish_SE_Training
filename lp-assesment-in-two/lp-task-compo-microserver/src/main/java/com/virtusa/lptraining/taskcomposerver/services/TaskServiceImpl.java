@@ -1,6 +1,7 @@
 package com.virtusa.lptraining.taskcomposerver.services;
 
 import com.google.gson.Gson;
+import com.virtusa.lpcommon.models.procommons.ProjectSimpleResponse;
 import com.virtusa.lpcommon.models.project.Project;
 import com.virtusa.lpcommon.models.tascommons.ProjectInTaskResponse;
 import com.virtusa.lpcommon.models.tascommons.TaskDetailResponse;
@@ -52,13 +53,13 @@ public class TaskServiceImpl implements TaskService{
     public ProjectInTaskResponse fetchTaskById(int id , String type) throws JpaSystemException {
 
         Task task = taskRepository.findTaskByTaskId(id);
-        Project project = null;
+        ProjectSimpleResponse project = null;
         ProjectInTaskResponse projectInTaskResponse;
         if(task != null) {
-            if (!type.isEmpty() && type.equalsIgnoreCase("all")) {
+            if (type != null && type.equalsIgnoreCase("all")) {
                 String response = restTemplate.getForObject(projectBaseurl + task.getProjectId(), String.class);
-                project = new Gson().fromJson(response, Project.class);
-                projectInTaskResponse = new TaskDetailResponse(task, project);
+                project = new Gson().fromJson(response, ProjectSimpleResponse.class);
+                projectInTaskResponse = new TaskDetailResponse(task, project.getProject());
             } else {
 
                 projectInTaskResponse = new TaskSimpleResponse(task);
