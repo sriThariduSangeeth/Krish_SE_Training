@@ -6,3 +6,12 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
   instance:
     hostname: localhost
+    
+project:
+  service :
+    base :
+      uri : http://projectservice/project/
+task:
+  service :
+    base :
+      uri : http://taskservice/project/
