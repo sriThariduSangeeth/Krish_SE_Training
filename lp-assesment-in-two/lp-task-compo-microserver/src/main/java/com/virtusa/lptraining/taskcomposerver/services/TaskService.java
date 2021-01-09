@@ -1,8 +1,12 @@
 package com.virtusa.lptraining.taskcomposerver.services;
 
-import com.virtusa.lptraining.taskcomposerver.entity.Task;
-import com.virtusa.lptraining.taskcomposerver.model.TaskProjectMapping;
+
+import com.virtusa.lpcommon.models.tascommons.ProjectInTaskResponse;
+import com.virtusa.lpcommon.models.task.Task;
+import org.springframework.orm.jpa.JpaSystemException;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @author dtsangeeth
@@ -12,6 +16,7 @@ import org.springframework.stereotype.Service;
 @Service
 public interface TaskService {
 
-    Task saveTask(Task task);
-    TaskProjectMapping fetchTaskById(int id);
+    Task saveTask(Task task) throws JpaSystemException;
+    ProjectInTaskResponse fetchTaskById(int id , String type) throws JpaSystemException;
+    List<Task> getAllTaskListByProjectId(int id) throws JpaSystemException;
 }

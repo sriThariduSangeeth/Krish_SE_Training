@@ -1,22 +1,40 @@
 server:
   port: 9191
+
 spring:
   application:
     name: api-gateway
   profiles:
     active: dev
-
   cloud:
     gateway:
       routes:
         - id : projectservice
           uri : lb://projectservice
           predicates :
-            - path=/project/**
+            - Path=/project/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: projectservice
+                fallbackuri: forward:/projectServiceFallBack
         - id: taskservice
           uri: lb://taskservice
           predicates:
-            - path=/task/**
+            - Path=/task/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: taskservice
+                fallbackuri: forward:/taskServiceFallBack
+
+hystrix:
+  command:
+    fallbackcmd:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 4000
 
 eureka:
   client:

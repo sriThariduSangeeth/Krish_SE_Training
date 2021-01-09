@@ -1,14 +1,24 @@
 package com.virtusa.lptraining.taskcomposerver.services;
 
 import com.google.gson.Gson;
-import com.virtusa.lptraining.taskcomposerver.entity.Project;
-import com.virtusa.lptraining.taskcomposerver.entity.Task;
-import com.virtusa.lptraining.taskcomposerver.model.TaskProjectMapping;
+import com.virtusa.lpcommon.models.project.Project;
+import com.virtusa.lpcommon.models.tascommons.ProjectInTaskResponse;
+import com.virtusa.lpcommon.models.tascommons.TaskDetailResponse;
+import com.virtusa.lpcommon.models.tascommons.TaskSimpleResponse;
+import com.virtusa.lpcommon.models.task.Task;
 import com.virtusa.lptraining.taskcomposerver.repository.TaskRepository;
+import jdk.nashorn.internal.runtime.options.Option;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.orm.jpa.JpaSystemException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.List;
+import java.util.Optional;
+
+import static com.virtusa.lptraining.taskcomposerver.utils.Constants.PROJECT_SERVICE_BASE_URL;
 
 /**
  * @author dtsangeeth
@@ -23,37 +33,45 @@ public class TaskServiceImpl implements TaskService{
     private TaskRepository taskRepository;
     @Autowired
     private RestTemplate restTemplate;
+    @Value("${"+PROJECT_SERVICE_BASE_URL+"}")
+    private String projectBaseurl;
 
     @Override
-    public Task saveTask(Task task) {
+    public Task saveTask(Task task) throws JpaSystemException{
         log.info("Save new Task in SQL Task Table");
-        String response = restTemplate.getForObject("http://localhost:8191/project/"+task.getProjectId(),String.class);
-        Project project = new Gson().fromJson(response,Project.class);
-        if(project.isProjectActive()){
+        String response = restTemplate.getForObject(projectBaseurl+task.getProjectId()+"/state",String.class);
+        if(response.equalsIgnoreCase("Active")){
             return taskRepository.save(task);
         }else {
-            log.info(project.getProjectName()+ "Project is not Active.");
+            log.info(task.getProjectId()+ "Project is not Active.");
             return null;
         }
     }
 
     @Override
-    public TaskProjectMapping fetchTaskById(int id) {
-        TaskProjectMapping tp = new TaskProjectMapping();
+    public ProjectInTaskResponse fetchTaskById(int id , String type) throws JpaSystemException {
+
         Task task = taskRepository.findTaskByTaskId(id);
+        Project project = null;
+        ProjectInTaskResponse projectInTaskResponse;
+        if(task != null) {
+            if (!type.isEmpty() && type.equalsIgnoreCase("all")) {
+                String response = restTemplate.getForObject(projectBaseurl + task.getProjectId(), String.class);
+                project = new Gson().fromJson(response, Project.class);
+                projectInTaskResponse = new TaskDetailResponse(task, project);
+            } else {
 
-        String response = restTemplate.getForObject("http://localhost:8191/project/"+task.getProjectId(), String.class);
+                projectInTaskResponse = new TaskSimpleResponse(task);
+            }
 
-        Project project = new Gson().fromJson(response,Project.class);
-
-        tp.setTask(task);
-        tp.setProject(project);
-
-        if(task == null){
-            log.info("Task ID "+ id + " does not exsit");
+            return projectInTaskResponse;
+        } else {
             return null;
-        }else {
-            return tp;
         }
+    }
+
+    @Override
+    public List<Task> getAllTaskListByProjectId(int id) throws JpaSystemException {
+        return taskRepository.findTasksByProjectId(id);
     }
 }

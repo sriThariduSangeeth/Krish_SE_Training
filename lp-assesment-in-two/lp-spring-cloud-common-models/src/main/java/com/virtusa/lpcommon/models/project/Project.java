@@ -1,4 +1,4 @@
-package com.virtusa.lpcommon.commons.models;
+package com.virtusa.lpcommon.models.project;
 
 import javax.persistence.*;
 
@@ -20,6 +20,18 @@ public class Project {
     private Long projectStartDate;
     private Long projectEndDate;
     private boolean projectActive;
+
+    public Project() {
+    }
+
+    public Project(int projectId, String projectName, String progectDiscription, Long projectStartDate, Long projectEndDate, boolean projectActive) {
+        this.projectId = projectId;
+        this.projectName = projectName;
+        this.progectDiscription = progectDiscription;
+        this.projectStartDate = projectStartDate;
+        this.projectEndDate = projectEndDate;
+        this.projectActive = projectActive;
+    }
 
     public int getProjectId() {
         return projectId;
