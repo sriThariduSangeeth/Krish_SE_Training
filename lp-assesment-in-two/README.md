@@ -15,17 +15,15 @@
 <img src="http://jb.gg/badges/official.svg" alt="License: MIT" height="18">
 <img src="https://img.shields.io/badge/Spring%20Boot-2.3.7-yellowgreen" alt="License: MIT" height="18">
 <img src="https://img.shields.io/badge/MAVEN-3.6.2-yellow" alt="License: MIT" height="18">
+<img src="https://spring.io/images/spring-logo-9146a4d3298760c2e7e49595184e1975.svg" alt="License: MIT" height="18">
 
-<div class="row">
-  <div class="column" style="background-color:#aaa;">
-    <h2>Column 1</h2>
-    <p>Some text..</p>
-  </div>
-  <div class="column" style="background-color:#bbb;">
-    <h2>Column 2</h2>
-    <p>Some text..</p>
-  </div>
-</div>
+
+<h2> Netflix Eureka service registry</h2>
+    
+<p align="center">
+ <img src="../assest/eruka.png"
+alt="App Screenshots" height="300" width="600">
+</p>
 
 <h2>Implemented Services &ensp;&ensp;:book: :book:</h2>
 
