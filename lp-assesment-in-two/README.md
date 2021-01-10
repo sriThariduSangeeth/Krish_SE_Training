@@ -29,12 +29,12 @@
     <li>LP Task Component Microserver</li>
       <ul>
         <li> spring: application: name: taskservice </li>
-        <li> URL: http://taskservice/task/* </li>
+        <li> URL:  <a> http://taskservice/task/* </a>  </li>
       </ul>
     <li>LP Project Component Microserver</li>
       <ul>
         <li> spring: application: name: projectservice </li>
-        <li> URL: http://projectservice/project/* </li>
+        <li> URL:  <a> http://projectservice/project/* </a> </li>
       </ul>
 </ul> 
 
