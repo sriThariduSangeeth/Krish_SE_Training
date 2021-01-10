@@ -10,15 +10,22 @@
 <P>LP Training code base that belongs to my office work. Microservices Architecture demo. Microservices, aka microservice architecture, is an architectural style that structures an application as a collection of small autonomous services, modeled around a business domain. In a Microservice Architecture, each service is self-contained and implements a single business capability.</p>
 
 <!-- Badges -->
-<p align="center">
-  <a href="LICENSE.md">
-    <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" height="18">
-  </a>
-</p>
 
+<img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" height="18">
 <img src="http://jb.gg/badges/official.svg" alt="License: MIT" height="18">
 <img src="https://img.shields.io/badge/Spring%20Boot-2.3.7-yellowgreen" alt="License: MIT" height="18">
 <img src="https://img.shields.io/badge/MAVEN-3.6.2-yellow" alt="License: MIT" height="18">
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>Column 1</h2>
+    <p>Some text..</p>
+  </div>
+  <div class="column" style="background-color:#bbb;">
+    <h2>Column 2</h2>
+    <p>Some text..</p>
+  </div>
+</div>
 
 <h2>Implemented Services &ensp;&ensp;:book: :book:</h2>
 
