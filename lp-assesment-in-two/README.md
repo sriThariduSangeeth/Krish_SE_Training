@@ -1,7 +1,7 @@
 <h3 align="center">:rotating_light: :construction:&ensp;&ensp;Work In Progress&ensp;&ensp;:construction: :rotating_light:</h3>
 <h2 align="center">LPTraining Assignment Two </h2>
 
-<P>LP Training code base that belongs to my office work. Microservices Architecture demo</p>
+<P>LP Training code base that belongs to my office work. Microservices Architecture demo. Microservices, aka microservice architecture, is an architectural style that structures an application as a collection of small autonomous services, modeled around a business domain. In a Microservice Architecture, each service is self-contained and implements a single business capability.</p>
 
 <!-- Badges -->
 <p align="center">
