@@ -2,7 +2,6 @@ package com.virtusa.lptraining.taskcomposerver.repository;
 
 import com.virtusa.lpcommon.models.task.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 

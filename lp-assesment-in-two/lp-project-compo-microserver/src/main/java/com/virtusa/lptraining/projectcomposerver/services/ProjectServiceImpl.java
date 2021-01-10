@@ -68,6 +68,33 @@ public class ProjectServiceImpl implements ProjectService{
 
     }
 
+    @Override
+    public List<TaskInProjectResponse> fetchProjectBySate(boolean state, String type) throws JpaSystemException {
+        List<Project> resPro = projectRepository.findProjectByProjectActive(state);
+        return returnAllValidProjectObj(resPro,type);
+    }
+
+    private List<TaskInProjectResponse> returnAllValidProjectObj (List<Project> proj , String type){
+        List<TaskInProjectResponse> finalList = new ArrayList<>();
+
+        if (type != null && type.equalsIgnoreCase("all")){
+            if (!proj.isEmpty()){
+                proj.forEach(pro ->{
+                    finalList.add( new ProjectDetailResponse(pro,getAllTaskForProject(pro.getProjectId())));
+                });
+            }
+
+        }else {
+            if (!proj.isEmpty()){
+                proj.forEach(project -> {
+                    finalList.add(new ProjectSimpleResponse(project));
+                });
+            }
+        }
+
+        return finalList;
+    }
+
     private List<Task> getAllTaskForProject(int id){
         Type listType = new TypeToken<List<Task>>() {}.getType();
         String resa = restTemplate.getForObject(taskBaseurl+"/project/"+id,String.class);
@@ -82,35 +109,24 @@ public class ProjectServiceImpl implements ProjectService{
 
     @Override
     public List<TaskInProjectResponse> getAllProjects(String type) throws JpaSystemException {
-
-        List<TaskInProjectResponse> finalList = new ArrayList<>();
         List<Project> prores = projectRepository.findAll();
+        return returnAllValidProjectObj(prores,type);
+    }
 
-        if(type !=null && type.equalsIgnoreCase("all")){
-            if (!prores.isEmpty()){
-                prores.forEach(pro ->{
-                    finalList.add( new ProjectDetailResponse(pro,getAllTaskForProject(pro.getProjectId())));
-                });
-            }
-        }else {
-            if (!prores.isEmpty()){
-                prores.forEach(project -> {
-                    finalList.add(new ProjectSimpleResponse(project));
-                });
-            }
-        }
-        return finalList;
+    @Override
+    public Project updateProject(Project project) throws JpaSystemException {
+        log.info("Update "+project.getProjectName()+" Project in SQL Project Table");
+        return projectRepository.save(project);
     }
 
     @Override
     public Project changeStateByProjectId(int id) throws JpaSystemException {
 
         if(projectRepository.findProjectStateByProjectId(id)){
-
+            return projectRepository.updateProjectStateByProjectId(false);
         }else {
-
+            return projectRepository.updateProjectStateByProjectId(true);
         }
-        return  projectRepository.updateProjectStateByProjectId(id);
     }
 
 

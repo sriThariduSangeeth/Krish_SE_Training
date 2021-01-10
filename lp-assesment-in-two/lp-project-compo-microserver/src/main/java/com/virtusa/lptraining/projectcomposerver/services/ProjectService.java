@@ -18,8 +18,10 @@ public interface ProjectService {
 
     Project saveProject(Project project);
     TaskInProjectResponse fetchProjectById(int id , String type) throws JpaSystemException;
+    List<TaskInProjectResponse> fetchProjectBySate(boolean state , String type) throws JpaSystemException;
     boolean checkProjectStateById(int id) throws JpaSystemException;
     List<TaskInProjectResponse> getAllProjects (String type) throws JpaSystemException;
+    Project updateProject(Project project) throws JpaSystemException;
     Project changeStateByProjectId(int id) throws JpaSystemException;
 
 }

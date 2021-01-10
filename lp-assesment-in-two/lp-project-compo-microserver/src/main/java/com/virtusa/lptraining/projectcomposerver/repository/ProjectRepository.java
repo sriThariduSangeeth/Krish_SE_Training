@@ -1,6 +1,7 @@
 package com.virtusa.lptraining.projectcomposerver.repository;
 
 import com.virtusa.lpcommon.models.project.Project;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -21,10 +22,11 @@ public interface ProjectRepository extends JpaRepository<Project, Integer > {
     @Query(value="select projectActive from project p where p.projectId =:id", nativeQuery=true)
     boolean findProjectStateByProjectId(int id);
 
+    List<Project> findProjectByProjectActive(boolean state);
+
     @Override
     List<Project> findAll();
 
-    @Modifying
-    @Query(value = "select case when projectActive is 1 then 0 else 1 end BooleanOutput from project p where p.projectId =:id " , nativeQuery = true)
-    Project updateProjectStateByProjectId(int id);
+    @Query(value = "update project set projectActive=:val" , nativeQuery = true)
+    Project updateProjectStateByProjectId(boolean val);
 }

@@ -59,6 +59,26 @@ public class ProjectController {
 
     /** Tested call
      * TODO - Exception Handle
+     * @RETURN - Update project
+     * @PARAM - project Object
+     **/
+    @PutMapping("")
+    public ResponseEntity<String> updateProject(@RequestBody Project project){
+        try {
+            Project pro = projectService.updateProject(project);
+            return ResponseEntity
+                    .status(HttpStatus.OK)
+                    .body(new Gson().toJson(pro));
+        }catch (JpaSystemException jp){
+            log.error("Project table configuration failed", jp.getStackTrace());
+            return ResponseEntity
+                    .status(HttpStatus.UNAUTHORIZED)
+                    .body("Invalid Project. Project does not exist. JPA db error " );
+        }
+    }
+
+    /** Tested call
+     * TODO - Exception Handle
      * @RETURN - Get project by projectId
      * @PARAM - projectId and type = "all"
      **/
@@ -77,10 +97,35 @@ public class ProjectController {
 
     /** Tested call
      * TODO - Exception Handle
+     * @RETURN - Get All Active and Inactive Project
+     * @PARAM - state = "Active or Inactive" and type = "all"
+     **/
+    @GetMapping("/{state}")
+    public ResponseEntity<String> getAllProjectByState(@PathVariable("state") boolean state , @RequestParam(required = false) String type){
+
+        log.info("Find Project using State :" + state);
+        if (Boolean.valueOf(state)){
+            List<TaskInProjectResponse> project = projectService.fetchProjectBySate(state,type);
+            if(project == null){
+                log.error("Invalid state and Project does not exist");
+                return ResponseEntity.notFound().build();
+            }else {
+                log.info("Valid state and Projects exist");
+                return ResponseEntity.ok().body(new Gson().toJson(project));
+            }
+        }else {
+            log.error("Invalid state and Project does not exist");
+            return ResponseEntity.notFound().build();
+        }
+
+    }
+
+    /** Tested call
+     * TODO - Exception Handle
      * @RETURN - Get project is Active ot not
      * @PARAM - projectId
      **/
-    @GetMapping("/{id}/state")
+    @GetMapping("/state/{id}")
     public ResponseEntity<String> checkProjectState(@PathVariable("id") int id){
 
         try {
@@ -110,7 +155,7 @@ public class ProjectController {
      * @RETURN - Update project is Active ot not
      * @PARAM - projectId
      **/
-    @PutMapping("/{id}/state")
+    @PutMapping("/state/{id}")
     public ResponseEntity<String> changeStateByProjectId(@PathVariable("id") int id){
         try {
             Project pro = projectService.changeStateByProjectId(id);

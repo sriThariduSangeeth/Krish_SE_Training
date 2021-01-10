@@ -40,7 +40,7 @@ public class TaskServiceImpl implements TaskService{
     @Override
     public Task saveTask(Task task) throws JpaSystemException{
         log.info("Save new Task in SQL Task Table");
-        String response = restTemplate.getForObject(projectBaseurl+task.getProjectId()+"/state",String.class);
+        String response = restTemplate.getForObject(projectBaseurl+"/state/"+task.getProjectId(),String.class);
         if(response.equalsIgnoreCase("Active")){
             return taskRepository.save(task);
         }else {
