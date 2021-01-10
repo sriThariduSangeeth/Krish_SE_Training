@@ -15,11 +15,10 @@
     <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" height="18">
   </a>
 </p>
-[![official JetBrains project](http://jb.gg/badges/official.svg)]()
-[![official JetBrains project](https://img.shields.io/badge/Spring%20Boot-2.3.7-yellowgreen)]()
-[![official JetBrains project](https://img.shields.io/badge/MAVEN-3.6.2-yellow)]()
 
-
+<img src="http://jb.gg/badges/official.svg" alt="License: MIT" height="18">
+<img src="https://img.shields.io/badge/Spring%20Boot-2.3.7-yellowgreen" alt="License: MIT" height="18">
+<img src="https://img.shields.io/badge/MAVEN-3.6.2-yellow" alt="License: MIT" height="18">
 
 <h2>Implemented Services &ensp;&ensp;:book: :book:</h2>
 
