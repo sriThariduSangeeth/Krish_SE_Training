@@ -12,6 +12,7 @@ LP Training code base that belongs to my office work.
   </a>
 </p>
 
+![dev](https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/devbadge.gif)
 [![Maven](https://img.shields.io/badge/maven%20central-2.0-yellowgreen)](http://stackoverflow.com/questions/tagged/maven)
 [![OpenIssues](https://img.shields.io/github/issues/sriThariduSangeeth/LPTraining?style=social)](https://github.com/sriThariduSangeeth/LPTraining/issues)
   <a>
