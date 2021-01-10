@@ -10,8 +10,19 @@
   </a>
 </p>
 
+<h2>Implemented Services &ensp;&ensp;:book: :book:</h2>
 
-<h4 align="center">Here is a screenshot of the UI</h4>
+<ul>
+    <li>LP Cloud Service Registry</li>
+    <li>LP Spring Cloud Config Server</li>
+    <li>LP Spring Cloud API Gateway</li>
+    <li>LP Spring Cloud Common Models (Simple Maven Project)</li>
+    <li>LP Task Component Microserver</li>
+    <li>LP Project Component Microserver</li>
+</ul> 
+
+
+<h4 align="center">Here is a screenshot of the Architecture Design</h4>
 <!-- image -->
 <img src="../assest/lpSpringMicro.png"
 alt="App Screenshots" height="400" width="880">
