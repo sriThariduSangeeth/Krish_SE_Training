@@ -50,7 +50,7 @@ alt="App Screenshots" height="400" width="880">
 <img src="./assest/lpSpringMicro.png"
 alt="App Screenshots" height="400" width="880">
 
-<h4>LP spring cloud config store</h4>
+<h2>LP spring cloud config store</h2>
 
 <p>Spring Cloud Config provides server-side and client-side support for externalized configuration in a distributed system. With the Config Server, you have a central place to manage external properties for applications across all environments.</p>
 
