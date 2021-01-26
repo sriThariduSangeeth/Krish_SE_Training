@@ -54,7 +54,7 @@ public class ProjectController {
             return ResponseEntity
                     .status(HttpStatus.UNAUTHORIZED)
                     .body("Invalid Project Table. JPA db error " );
-        }
+        }S
     }
 
     /** Tested call

@@ -12,9 +12,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.orm.jpa.JpaSystemException;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
-
 /**
  * @author dtsangeeth
  * @created 06 / 01 / 2021
@@ -84,4 +81,13 @@ public class TaskController {
         }
     }
 
+    @GetMapping("/{date}/{value}")
+    public ResponseEntity<String> findAllTaskByDate (@PathVariable("date") String date , @PathVariable("value") long value){
+        return null;
+    }
+
+    @GetMapping("/{date}/{value}/{status}")
+    public ResponseEntity<String> findAllTaskByDateAndStatus (@PathVariable("date") String date , @PathVariable("value") long value , @PathVariable("status") long status){
+        return null;
+    }
 }
