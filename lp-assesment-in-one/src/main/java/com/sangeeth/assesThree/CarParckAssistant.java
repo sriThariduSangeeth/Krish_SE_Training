@@ -1,8 +1,8 @@
-package com.virtusa.assesThree;
+package com.sangeeth.assesThree;
 
-import com.virtusa.assesone.Filewriter;
-import com.virtusa.main.Main;
-import com.virtusa.util.ColorBank;
+import com.sangeeth.assesone.Filewriter;
+import com.sangeeth.main.Main;
+import com.sangeeth.util.ColorBank;
 
 import java.io.IOException;
 import java.text.DateFormat;

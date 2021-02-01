@@ -1,4 +1,4 @@
-package com.virtusa.assesThree;
+package com.sangeeth.assesThree;
 
 import java.util.Date;
 
@@ -7,34 +7,24 @@ import java.util.Date;
  * @created 15 / 12 / 2020
  * @project LPTraining
  */
-public class Car extends Vehicle{
+public class Motorbike  extends Vehicle{
 
-    private String carColor;
-    private int numberOfDoor;
 
-    public Car(String type , String id , String brand , Date date , String color , int door){
+    private String engineCapacity;
+
+    public Motorbike(String type , String id , String brand , Date date , String capacity){
         vehicleType = type;
         idPlate = id;
         vehicleBrand = brand;
         dateTime = date;
-        carColor = color;
-        numberOfDoor = door;
+        engineCapacity = capacity;
+    }
+    public String getEngineCapacity() {
+        return engineCapacity;
     }
 
-    public String getColor(){
-        return this.carColor;
-    }
-
-    public void setColor(String color){
-        this.carColor = color;
-    }
-
-    public int getNumberOfDoor(){
-        return this.numberOfDoor;
-    }
-
-    public void setNumberOfDoor(int numberOfDoor){
-        this.numberOfDoor = numberOfDoor;
+    public void setEngineCapacity(String engineCapacity) {
+        this.engineCapacity = engineCapacity;
     }
 
     @Override
@@ -44,7 +34,7 @@ public class Car extends Vehicle{
 
     @Override
     public void setVehicleType(String vehicleType) {
-
+        this.vehicleType = vehicleType;
     }
 
     @Override
@@ -54,7 +44,7 @@ public class Car extends Vehicle{
 
     @Override
     public void setIdPlate(String idPlate) {
-
+        this.idPlate = idPlate;
     }
 
     @Override
@@ -64,7 +54,7 @@ public class Car extends Vehicle{
 
     @Override
     public void setVehicleBrand(String vehicleBrand) {
-
+        this.vehicleBrand = vehicleBrand;
     }
 
     @Override
@@ -74,6 +64,6 @@ public class Car extends Vehicle{
 
     @Override
     public void setDateTime(Date dateTime) {
-
+        this.dateTime = dateTime;
     }
 }

@@ -1,7 +1,6 @@
-package com.virtusa.assesTwo;
+package com.sangeeth.assesTwo;
 
-import com.virtusa.main.Main;
-import com.virtusa.util.ColorBank;
+import com.sangeeth.util.ColorBank;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,7 +12,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.virtusa.util.Constants.TXTFILETWO;
+import static com.sangeeth.util.Constants.TXTFILETWO;
 
 /**
  * @author dtsangeeth

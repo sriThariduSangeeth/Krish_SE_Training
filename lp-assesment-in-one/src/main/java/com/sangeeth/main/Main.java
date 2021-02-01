@@ -1,12 +1,12 @@
-package com.virtusa.main;
+package com.sangeeth.main;
 
-import com.virtusa.assesThree.CarParckAssistant;
-import com.virtusa.assesThree.CarParckSystem;
-import com.virtusa.assesThree.Vehicle;
-import com.virtusa.assesOne.Filereader;
-import com.virtusa.assesTwo.ReversObjInt;
-import com.virtusa.assesone.Filewriter;
-import com.virtusa.util.ColorBank;
+import com.sangeeth.assesThree.CarParckAssistant;
+import com.sangeeth.assesThree.CarParckSystem;
+import com.sangeeth.assesThree.Vehicle;
+import com.sangeeth.assesOne.Filereader;
+import com.sangeeth.assesTwo.ReversObjInt;
+import com.sangeeth.assesone.Filewriter;
+import com.sangeeth.util.ColorBank;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -14,11 +14,11 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
-import java.util.*;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static com.virtusa.util.Constants.*;
+import static com.sangeeth.util.Constants.*;
 
 /**
  * @author dtsangeeth

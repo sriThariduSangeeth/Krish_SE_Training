@@ -1,6 +1,6 @@
-package com.virtusa.assesone;
+package com.sangeeth.assesone;
 
-import com.virtusa.util.ColorBank;
+import com.sangeeth.util.ColorBank;
 
 import java.io.*;
 
