@@ -1,16 +1,16 @@
-package com.virtusa.main;
+package com.sangeeth.main;
 
-import com.virtusa.iofiles.TxtFileReader;
-import com.virtusa.iofiles.TxtFileWriter;
-import com.virtusa.reverspart.ReversObjInt;
-import com.virtusa.util.ColorBank;
+import com.sangeeth.iofiles.TxtFileReader;
+import com.sangeeth.iofiles.TxtFileWriter;
+import com.sangeeth.reverspart.ReversObjInt;
+import com.sangeeth.util.ColorBank;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import static com.virtusa.util.Constants.*;
+import static com.sangeeth.util.Constants.*;
 
 /**
  * @author dtsangeeth

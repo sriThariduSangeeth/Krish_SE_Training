@@ -1,6 +1,6 @@
-package com.virtusa.reverspart;
+package com.sangeeth.reverspart;
 
-import com.virtusa.util.ColorBank;
+import com.sangeeth.util.ColorBank;
 
 import java.io.*;
 import java.math.BigInteger;
@@ -9,7 +9,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.virtusa.util.Constants.TXTFILETWO;
+import static com.sangeeth.util.Constants.TXTFILETWO;
 
 /**
  * @author dtsangeeth
