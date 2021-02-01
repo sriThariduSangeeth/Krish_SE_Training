@@ -1,4 +1,4 @@
-package com.virtusa.iofiles;
+package com.sangeeth.iofiles;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,9 +9,9 @@ import java.io.Reader;
  * @created 18 / 12 / 2020
  * @project lp-capitalization-imp
  */
-public class LowerCaseReader extends BufferedReader {
+public class UpperCaseReader extends BufferedReader {
 
-    public LowerCaseReader(Reader in) {
+    public UpperCaseReader(Reader in) {
         super(in);
     }
 
@@ -21,7 +21,7 @@ public class LowerCaseReader extends BufferedReader {
         if (line == null) {
             return null;
         } else {
-            return line.toLowerCase();
+            return line.toUpperCase();
         }
     }
 }

@@ -1,12 +1,12 @@
-package com.virtusa.iofiles;
+package com.sangeeth.iofiles;
 
-import com.virtusa.util.ColorBank;
+import com.sangeeth.util.ColorBank;
 
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import static com.virtusa.util.Constants.TXTFILEONE;
+import static com.sangeeth.util.Constants.TXTFILEONE;
 
 /**
  * @author dtsangeeth

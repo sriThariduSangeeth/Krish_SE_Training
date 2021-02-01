@@ -1,6 +1,5 @@
-package com.virtusa.iofiles;
+package com.sangeeth.iofiles;
 
-import javax.swing.plaf.basic.BasicButtonUI;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.Reader;
@@ -10,9 +9,9 @@ import java.io.Reader;
  * @created 18 / 12 / 2020
  * @project lp-capitalization-imp
  */
-public class UpperCaseReader extends BufferedReader {
+public class LowerCaseReader extends BufferedReader {
 
-    public UpperCaseReader(Reader in) {
+    public LowerCaseReader(Reader in) {
         super(in);
     }
 
@@ -22,7 +21,7 @@ public class UpperCaseReader extends BufferedReader {
         if (line == null) {
             return null;
         } else {
-            return line.toUpperCase();
+            return line.toLowerCase();
         }
     }
 }
