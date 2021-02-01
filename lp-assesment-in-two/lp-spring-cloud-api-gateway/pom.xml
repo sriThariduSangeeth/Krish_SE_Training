@@ -8,7 +8,7 @@
         <version>2.3.7.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.virtusa.lptraining</groupId>
+    <groupId>com.sangeeth.lptraining</groupId>
     <artifactId>lp-spring-cloud-api-gateway</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>lp-spring-cloud-api-gateway</name>

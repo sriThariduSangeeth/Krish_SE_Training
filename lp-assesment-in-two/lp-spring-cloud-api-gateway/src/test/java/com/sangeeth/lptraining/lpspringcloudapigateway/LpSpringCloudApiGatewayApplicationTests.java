@@ -1,4 +1,4 @@
-package com.virtusa.lptraining.lpspringcloudapigateway;
+package com.sangeeth.lptraining.lpspringcloudapigateway;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
