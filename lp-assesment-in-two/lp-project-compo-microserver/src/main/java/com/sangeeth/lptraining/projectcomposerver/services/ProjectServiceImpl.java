@@ -1,15 +1,14 @@
-package com.virtusa.lptraining.projectcomposerver.services;
+package com.sangeeth.lptraining.projectcomposerver.services;
 
 
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
 import com.google.gson.reflect.TypeToken;
-import com.virtusa.lpcommon.models.procommons.ProjectDetailResponse;
-import com.virtusa.lpcommon.models.procommons.ProjectSimpleResponse;
-import com.virtusa.lpcommon.models.procommons.TaskInProjectResponse;
-import com.virtusa.lpcommon.models.project.Project;
-import com.virtusa.lpcommon.models.task.Task;
-import com.virtusa.lptraining.projectcomposerver.repository.ProjectRepository;
+import com.sangeeth.lptraining.projectcomposerver.repository.ProjectRepository;
+import com.sangeeth.lpcommon.models.procommons.ProjectDetailResponse;
+import com.sangeeth.lpcommon.models.procommons.ProjectSimpleResponse;
+import com.sangeeth.lpcommon.models.procommons.TaskInProjectResponse;
+import com.sangeeth.lpcommon.models.project.Project;
+import com.sangeeth.lpcommon.models.task.Task;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,12 +17,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.lang.reflect.Type;
-import java.sql.Struct;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
-import static com.virtusa.lptraining.projectcomposerver.utils.Constants.TASK_SERVICE_BASE_URL;
+import static com.sangeeth.lptraining.projectcomposerver.utils.Constants.TASK_SERVICE_BASE_URL;
 
 /**
  * @author dtsangeeth

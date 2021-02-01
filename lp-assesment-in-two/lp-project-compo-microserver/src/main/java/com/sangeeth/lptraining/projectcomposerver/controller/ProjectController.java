@@ -1,9 +1,9 @@
-package com.virtusa.lptraining.projectcomposerver.controller;
+package com.sangeeth.lptraining.projectcomposerver.controller;
 
 import com.google.gson.Gson;
-import com.virtusa.lpcommon.models.procommons.TaskInProjectResponse;
-import com.virtusa.lpcommon.models.project.*;
-import com.virtusa.lptraining.projectcomposerver.services.ProjectService;
+import com.sangeeth.lptraining.projectcomposerver.services.ProjectService;
+import com.sangeeth.lpcommon.models.procommons.TaskInProjectResponse;
+import com.sangeeth.lpcommon.models.project.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,7 +12,6 @@ import org.springframework.orm.jpa.JpaSystemException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  * @author dtsangeeth
@@ -54,7 +53,7 @@ public class ProjectController {
             return ResponseEntity
                     .status(HttpStatus.UNAUTHORIZED)
                     .body("Invalid Project Table. JPA db error " );
-        }S
+        }
     }
 
     /** Tested call

@@ -1,4 +1,4 @@
-package com.virtusa.lptraining.projectcomposerver;
+package com.sangeeth.lptraining.projectcomposerver;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

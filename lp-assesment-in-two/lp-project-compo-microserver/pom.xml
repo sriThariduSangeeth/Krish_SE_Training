@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.virtusa.lptraining</groupId>
+    <groupId>com.sangeeth.lptraining</groupId>
     <artifactId>lp-project-compo-microserver</artifactId>
     <version>0.0.1-VERSION</version>
     <name>lp-project-compo-microserver</name>
@@ -28,7 +28,7 @@
         </dependency>
 
         <dependency>
-            <groupId>com.virtusa.lpcommon</groupId>
+            <groupId>com.sangeeth.lpcommon</groupId>
             <artifactId>lp-spring-cloud-common-models</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>

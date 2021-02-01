@@ -1,8 +1,8 @@
-package com.virtusa.lptraining.projectcomposerver.services;
+package com.sangeeth.lptraining.projectcomposerver.services;
 
-import com.virtusa.lpcommon.models.procommons.ProjectSimpleResponse;
-import com.virtusa.lpcommon.models.procommons.TaskInProjectResponse;
-import com.virtusa.lpcommon.models.project.Project;
+import com.sangeeth.lpcommon.models.procommons.ProjectSimpleResponse;
+import com.sangeeth.lpcommon.models.procommons.TaskInProjectResponse;
+import com.sangeeth.lpcommon.models.project.Project;
 import org.springframework.orm.jpa.JpaSystemException;
 import org.springframework.stereotype.Service;
 

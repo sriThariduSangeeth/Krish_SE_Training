@@ -8,7 +8,7 @@
         <version>2.4.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.virtusa.lptraining</groupId>
+    <groupId>com.sangeeth.lptraining</groupId>
     <artifactId>lp-cloud-service-registry</artifactId>
     <version>0.0.1-VERSION</version>
     <name>lp-cloud-service-registry</name>

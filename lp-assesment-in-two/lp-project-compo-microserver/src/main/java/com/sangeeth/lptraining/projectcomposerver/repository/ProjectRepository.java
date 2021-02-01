@@ -1,6 +1,6 @@
-package com.virtusa.lptraining.projectcomposerver.repository;
+package com.sangeeth.lptraining.projectcomposerver.repository;
 
-import com.virtusa.lpcommon.models.project.Project;
+import com.sangeeth.lpcommon.models.project.Project;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;

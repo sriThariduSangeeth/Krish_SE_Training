@@ -1,4 +1,4 @@
-package com.virtusa.lptraining.projectcomposerver.entity;
+package com.sangeeth.lptraining.projectcomposerver.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

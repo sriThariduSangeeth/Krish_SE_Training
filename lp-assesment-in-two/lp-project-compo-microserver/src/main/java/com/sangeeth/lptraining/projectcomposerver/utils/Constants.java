@@ -1,4 +1,4 @@
-package com.virtusa.lptraining.projectcomposerver.utils;
+package com.sangeeth.lptraining.projectcomposerver.utils;
 
 /**
  * @author dtsangeeth

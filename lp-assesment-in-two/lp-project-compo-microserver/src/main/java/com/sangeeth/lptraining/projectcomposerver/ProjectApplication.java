@@ -1,4 +1,4 @@
-package com.virtusa.lptraining.projectcomposerver;
+package com.sangeeth.lptraining.projectcomposerver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 @EnableEurekaClient
-@EntityScan(basePackages = "com.virtusa.lpcommon.models.project")
+@EntityScan(basePackages = "com.sangeeth.lpcommon.models.project")
 public class ProjectApplication {
 
     public static void main(String[] args) {
