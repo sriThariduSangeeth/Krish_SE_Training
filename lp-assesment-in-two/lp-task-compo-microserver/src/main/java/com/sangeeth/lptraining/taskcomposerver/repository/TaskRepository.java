@@ -1,4 +1,4 @@
-package com.virtusa.lptraining.taskcomposerver.repository;
+package com.sangeeth.lptraining.taskcomposerver.repository;
 
 import com.virtusa.lpcommon.models.task.Task;
 import org.springframework.data.domain.Sort;

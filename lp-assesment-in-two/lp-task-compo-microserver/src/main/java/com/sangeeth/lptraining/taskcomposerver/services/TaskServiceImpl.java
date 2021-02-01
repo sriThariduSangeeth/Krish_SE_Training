@@ -1,14 +1,13 @@
-package com.virtusa.lptraining.taskcomposerver.services;
+package com.sangeeth.lptraining.taskcomposerver.services;
 
 import com.google.gson.Gson;
+import com.sangeeth.lptraining.taskcomposerver.repository.TaskRepository;
+import com.sangeeth.lptraining.taskcomposerver.utils.Constants;
 import com.virtusa.lpcommon.models.procommons.ProjectSimpleResponse;
-import com.virtusa.lpcommon.models.project.Project;
 import com.virtusa.lpcommon.models.tascommons.ProjectInTaskResponse;
 import com.virtusa.lpcommon.models.tascommons.TaskDetailResponse;
 import com.virtusa.lpcommon.models.tascommons.TaskSimpleResponse;
 import com.virtusa.lpcommon.models.task.Task;
-import com.virtusa.lptraining.taskcomposerver.repository.TaskRepository;
-import jdk.nashorn.internal.runtime.options.Option;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -17,9 +16,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
-import java.util.Optional;
-
-import static com.virtusa.lptraining.taskcomposerver.utils.Constants.PROJECT_SERVICE_BASE_URL;
 
 /**
  * @author dtsangeeth
@@ -34,7 +30,7 @@ public class TaskServiceImpl implements TaskService{
     private TaskRepository taskRepository;
     @Autowired
     private RestTemplate restTemplate;
-    @Value("${"+PROJECT_SERVICE_BASE_URL+"}")
+    @Value("${"+ Constants.PROJECT_SERVICE_BASE_URL+"}")
     private String projectBaseurl;
 
     @Override

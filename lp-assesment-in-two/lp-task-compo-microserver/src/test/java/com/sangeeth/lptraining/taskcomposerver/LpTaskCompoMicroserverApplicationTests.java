@@ -1,4 +1,4 @@
-package com.virtusa.lptraining.taskcomposerver;
+package com.sangeeth.lptraining.taskcomposerver;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

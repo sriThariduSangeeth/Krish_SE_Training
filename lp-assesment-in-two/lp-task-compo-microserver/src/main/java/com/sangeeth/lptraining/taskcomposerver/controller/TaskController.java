@@ -1,12 +1,11 @@
-package com.virtusa.lptraining.taskcomposerver.controller;
+package com.sangeeth.lptraining.taskcomposerver.controller;
 
 import com.google.gson.Gson;
+import com.sangeeth.lptraining.taskcomposerver.services.TaskService;
 import com.virtusa.lpcommon.models.tascommons.ProjectInTaskResponse;
 import com.virtusa.lpcommon.models.task.Task;
-import com.virtusa.lptraining.taskcomposerver.services.TaskService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.orm.jpa.JpaSystemException;
