@@ -1,7 +1,7 @@
-package com.virtusa.parkmanager;
+package com.sangeeth.parkmanager;
 
-import com.virtusa.iofiles.Filewriter;
-import com.virtusa.util.ColorBank;
+import com.sangeeth.iofiles.Filewriter;
+import com.sangeeth.util.ColorBank;
 
 import java.io.IOException;
 import java.text.DateFormat;

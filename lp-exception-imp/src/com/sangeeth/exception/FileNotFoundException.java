@@ -1,4 +1,4 @@
-package com.virtusa.exception;
+package com.sangeeth.exception;
 
 import java.io.IOException;
 

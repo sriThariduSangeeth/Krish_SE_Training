@@ -1,9 +1,9 @@
-package com.virtusa.main;
+package com.sangeeth.main;
 
-import com.virtusa.parkmanager.CarParckAssistant;
-import com.virtusa.parkmanager.CarParckSystem;
-import com.virtusa.parkmanager.Vehicle;
-import com.virtusa.util.ColorBank;
+import com.sangeeth.parkmanager.CarParckAssistant;
+import com.sangeeth.parkmanager.CarParckSystem;
+import com.sangeeth.parkmanager.Vehicle;
+import com.sangeeth.util.ColorBank;
 
 import java.io.IOException;
 import java.util.*;

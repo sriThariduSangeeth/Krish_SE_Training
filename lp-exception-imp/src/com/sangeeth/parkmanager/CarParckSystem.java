@@ -1,4 +1,4 @@
-package com.virtusa.parkmanager;
+package com.sangeeth.parkmanager;
 
 import java.io.IOException;
 import java.util.List;

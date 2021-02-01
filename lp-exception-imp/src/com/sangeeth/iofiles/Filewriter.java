@@ -1,6 +1,6 @@
-package com.virtusa.iofiles;
+package com.sangeeth.iofiles;
 
-import com.virtusa.util.ColorBank;
+import com.sangeeth.util.ColorBank;
 
 import java.io.BufferedWriter;
 import java.io.File;
