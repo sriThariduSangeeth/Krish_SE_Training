@@ -1,4 +1,4 @@
-package com.virtusa.lpconfig.lpspringcloudconfigserver;
+package com.sangeeth.lpconfig.lpspringcloudconfigserver;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.virtusa.lpconfig.lpspringcloudconfigserver;
+package com.sangeeth.lpconfig.lpspringcloudconfigserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
